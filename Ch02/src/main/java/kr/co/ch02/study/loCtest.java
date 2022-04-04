@@ -33,7 +33,9 @@ public class loCtest {
 		
 		//IoC/DI 적용하지 않을 경우
 		Speaker spk = new Speaker();
-		Tv tv = new Tv(spk);
+		Remocon remocon = new Remocon();
+		
+		Tv tv = new Tv(spk, remocon);
 		
 		tv.powerOn();
 		tv.chUp();
