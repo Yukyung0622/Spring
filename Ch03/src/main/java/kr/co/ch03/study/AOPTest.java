@@ -39,8 +39,8 @@ import org.springframework.web.bind.annotation.RestController;
  *   
  *  2) 패키지명
  *   - kr.co.ch03          : 해당 패키지 대상 
- *   - kr.co.ch03..        : kr.co.ch04로 시작하는 모든 패키지 대상
- *   - kr.co.ch03..service : kr.co.ch04로 시작해서 마지막 패키지명이 service로 끝나는 패키지 대상
+ *   - kr.co.ch03..        : kr.co.ch03로 시작하는 모든 패키지 대상
+ *   - kr.co.ch03..service : kr.co.ch03로 시작해서 마지막 패키지명이 service로 끝나는 패키지 대상
  *  
  *  3) 클래스명
  *   - BoardService : 해당 클래스 대상
