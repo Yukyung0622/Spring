@@ -3,13 +3,24 @@
 <mapper namespace="kr.co.ch06.persistence.MemberDao">
 
 	<insert id="insertMember">
-		INSERT INTO `Member` VALUES (#{uid}, #{name}, #{hp}, #{pos}, #{dep}, #{now});
+		INSERT INTO `Member` VALUES (#{uid}, #{name}, #{hp}, #{pos}, #{dep}, now());
 	</insert>
-	<select id="selectMember"></select>
-	<select id="selectMember" resultType="kr.co.ch06.vo.UserVo">
+	<select id="selectMember" resultType="kr.co.ch06.vo.MemberVo">
+		SELECT * FROM `Member` WHERE `uid`=#{uid};
+	</select>
+	<select id="selectMembers" resultType="kr.co.ch06.vo.MemberVo">
 		SELECT * FROM `Member`;
 	</select>
-	<update id="updateMember"></update>
-	<delete id="deleteMember"></delete>
-
+	<update id="updateMember">
+		UPDATE `Member` SET 
+			`name`=#{name}, 
+			`hp`=#{hp}, 
+			`pos`=#{pos},
+			`dep`=#{dep} 
+		WHERE 
+			`uid`=#{uid};
+	</update>
+	<delete id="deleteMember">
+		DELETE FORM `Member` WHERE `uid`=#{uid};
+	</delete>
 </mapper>

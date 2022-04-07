@@ -17,11 +17,17 @@ public class MemberService {
 	public void insertMember(MemberVo vo) {
 		dao.insertMember(vo);
 	}
-	public void selectMember() {}
+	public MemberVo selectMember(String uid) {
+		return dao.selectMember(uid);
+	}
 	public List<MemberVo> selectMembers() {
 		return dao.selectMembers();
 	}
-	public void updateMember() {}
-	public void deleteMember() {}
+	public void updateMember(MemberVo vo) {
+		dao.updateMember(vo);
+	}
+	public void deleteMember(String uid) {
+		dao.deleteMember(uid);
+	}
 
 }
