@@ -8,11 +8,9 @@
 		<h3>customer/modify</h3>
 		<a th:href="@{/customer/list}">고객목록</a>
 		<form th:action="@{/customer/modify}" method="post">
+		<input type="hidden" name="custid" th:value="${customer.custid}"/>
 			<table border="1">
-				<tr>
-					<td>아이디</td>
-					<td><input type="text" name="uid" readonly th:value="${customer.uid}"></td>
-				</tr>
+				
 				<tr>
 					<td>이름</td>
 					<td><input type="text" name="name" th:value="${customer.name}"></td>

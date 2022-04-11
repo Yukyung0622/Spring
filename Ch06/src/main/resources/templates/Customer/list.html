@@ -18,7 +18,7 @@
 				<td	th:text=${customer.custid}></td>
 				<td th:text=${customer.name}>홍길동</td>
 				<td th:text=${customer.address}>010-1221-1111</td>
-				<td th:text=${user.phone}>23</td>
+				<td th:text=${customer.phone}>23</td>
 				<td>
 					<a th:href="@{/customer/modify(custid=${customer.custid})}">수정</a>
 					<a th:href="@{/customer/delete(custid=${customer.custid})}">삭제</a>

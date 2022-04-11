@@ -2,10 +2,12 @@ package kr.co.ch06.persistence;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import kr.co.ch06.vo.UserVo;
 
+@Mapper
 @Repository
 public interface UserDao {
 	
