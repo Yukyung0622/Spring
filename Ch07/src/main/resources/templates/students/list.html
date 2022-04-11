@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>students/list</title>
+	</head>
+	<body>
+		<h3>students/list</h3>
+		<a th:href="@{/students/register}">등록하기</a>
+		<table border="1">
+			<tr>
+				<td>학번</td>
+				<td>이름</td>
+				<td>성별</td>
+				<td>휴대폰</td>
+				<td>등급</td>
+				<td>등록일</td>
+			</tr>
+			<tr th:each="students:${students}">
+				<td th:text=${students.sid}>20220203</td>
+				<td th:text=${students.name}>홍길동</td>
+				<td th:text=${students.gender}>1</td>
+				<td th:text=${students.hp}>010-1221-1111</td>
+				<td th:text=${students.regdate}>3</td>
+				<td>
+					<a th:href="@{/user/modify(uid=${user.uid})}">수정</a>
+					<a th:href="@{/user/delete(uid=${user.uid})}">삭제</a>
+				</td>
+			</tr>
+		</table>
+		
+	</body>
+</html>
