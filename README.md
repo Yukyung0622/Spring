@@ -4,7 +4,7 @@
 ### Ch01.Spring 소개 및 설치
 >* STS4 기본 인코딩 설정 → STS4 인코딩 설정.txt 참고
 >* 프로젝트 생성 > Developer > Spring Boot DevTools 선택
----
+===
 ### Ch02. Spring Ioc/DI
 >* Developer > Spring Boot DevTools 선택
 ---
