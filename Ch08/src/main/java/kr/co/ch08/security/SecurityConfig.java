@@ -8,25 +8,25 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import kr.co.ch08.service.UserService;
+import kr.co.ch08.service.User1Service;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private UserService userService;
+	private User1Service userService;
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		// 접근권한 설정
+		// 접근 권한 설정
 		http.authorizeRequests().antMatchers("/").permitAll();
 		http.authorizeRequests().antMatchers("/guest/**").permitAll();
 		http.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers("/manager/**").hasRole("MANAGER");
-		http.authorizeRequests().antMatchers("/member/**").hasRole("MEMBER");
+		http.authorizeRequests().antMatchers("/manager/**").hasAnyRole("ADMIN","MANAGER");
+		http.authorizeRequests().antMatchers("/member/**").hasAnyRole("ADMIN","MANAGER", "MEMBER");
 		
 		// User2 테이블에 있는 사용자를 위한 기본 인증 설정(특별한 권한 X)
-		http.authorizeRequests().antMatchers("/user/loginSuccess").authenticated();
+		http.authorizeRequests().antMatchers("/user1/loginSuccess").authenticated();
 		
 		// 사이트 위조 요청에 대한 방지 설정
 		http.csrf().disable();
@@ -36,17 +36,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		// 로그인 폼 설정(사용자 정의 폼 사용)
 		http.formLogin()
-		.loginPage("/user/login")
-		.defaultSuccessUrl("/user/loginSuccess")
-		.failureUrl("/user/login?success=100")
+		.loginPage("/user1/login")
+		.defaultSuccessUrl("/user1/loginSuccess")
+		.failureUrl("/user1/login?success=100")
 		.usernameParameter("uid")
 		.passwordParameter("pass");
 		
 		// 로그아웃 설정(사용자 정의)
 		http.logout()
 		.invalidateHttpSession(true)
-		.logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
-		.logoutSuccessUrl("/user/login");
+		.logoutRequestMatcher(new AntPathRequestMatcher("/user1/logout"))
+		.logoutSuccessUrl("/user1/login");
 	}
 	
 	@Override
@@ -57,8 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.inMemoryAuthentication().withUser("manager").password("{noop}1234").roles("MANAGER");
 		auth.inMemoryAuthentication().withUser("member").password("{noop}1234").roles("MEMBER");
 		
-		// 로그인 인증 처리 메서드 설정
+		// 로그인 인증 처리 서비스, 암호화 방식 설정
 		auth.userDetailsService(userService).passwordEncoder(new BCryptPasswordEncoder());
-		
 	}
 }
