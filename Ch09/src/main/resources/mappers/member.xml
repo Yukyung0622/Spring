@@ -10,15 +10,15 @@
 	</select>
 	<update id="updateMember">
 		UPDATE `Member` SET
-			`name`={#name},
-			`hp`={#hp},
-			`pos`={#pos},
-			`dep`={#dep}
+			`name`=#{name},
+			`hp`=#{hp},
+			`pos`=#{pos},
+			`dep`=#{dep}
 		WHERE
-			`uid`={#uid};
+			`uid`=#{uid};
 	</update>
 	<delete id="deleteMember">
-		DELETE FROM `Member` WHERE `uid`={#uid}
+		DELETE FROM `Member` WHERE `uid`=#{uid};
 	</delete>
 	
 </mapper>

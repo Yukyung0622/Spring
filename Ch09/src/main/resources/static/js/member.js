@@ -13,11 +13,11 @@ $(function(){
 	
 	$('.member_register').click(function(){
 		let jsonData = {
-			"uid":"aa11",
-			"name":"홍길순",
+			"uid":"zzz",
+			"name":"홍길동",
 			"hp":"010-1111-1971",
 			"pos":"사원",
-			"dep":"101",
+			"dep":101
 		};
 		
 		$.ajax({
@@ -34,14 +34,14 @@ $(function(){
 	
 	$('.member_modify').click(function(){
 		let jsonData = {
-			"name":"홍길준",
-			"hp":"010-1111-1981",
+			"name":"홍길순",
+			"hp":"010-1111-1971",
 			"pos":"과장",
-			"dep":"102",
+			"dep": 102
 		};
 		
 		$.ajax({
-			url:'/member/aa11',
+			url:'/member/zzz',
 			type:'PUT',
 			data:jsonData,
 			dataType:'json',
@@ -55,9 +55,8 @@ $(function(){
 	
 	$('.member_delete').click(function(){
 		$.ajax({
-			url:'/member/aa11',
+			url:'/member/zzz',
 			type:'DELETE',
-			data:jsonData,
 			dataType:'json',
 			success:function(data){
 				console.log(data);
