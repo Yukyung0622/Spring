@@ -1,9 +1,12 @@
 package kr.co.sboard1.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +25,7 @@ public class ArticleController {
 	@Autowired
 	private ArticleService service;
 	
+	
 	// 처음 sessUser값을 초기화하는 메서드 
 	@ModelAttribute("sessUser")
 	public UserVo setUserVo() {
@@ -29,12 +33,27 @@ public class ArticleController {
 	}
 
 	@GetMapping("/article/list")
-	public String list(@ModelAttribute("sessUser") UserVo sessUser) {
+	public String list(@ModelAttribute("sessUser") UserVo sessUser, Model model, String pg) {
 		
 		// 로그인 체크
 		if(sessUser == null) {
 			return "redirect:/user/login?success=102";	
 		}
+		
+		int currentPage = service.getCurrentPage(pg); 
+		int total = service.selectCountTotal();
+		int lastPageNum = service.getLastPageNum(total);
+		int start = service.getLimitStart(currentPage);
+		int pageStartNum = service.getPageStartNum(total, start);
+		int groups[] = service.getPageGroup(currentPage, lastPageNum);
+		
+		List<ArticleVo> articles = service.selectArticles(start);
+		
+		model.addAttribute("articles", articles);
+		model.addAttribute("lastPageNum", lastPageNum);
+		model.addAttribute("currentPage", currentPage);
+		model.addAttribute("pageStartNum", pageStartNum);
+		model.addAttribute("groups", groups);
 		
 		return "/article/list";
 	}
@@ -60,29 +79,26 @@ public class ArticleController {
 		vo.setRegip(regip);
 		
 		if(vo.getFname().isEmpty()) {
-			//파일 첨부 안했을때
+			// 파일 첨부 안했을 때
 			vo.setFile(0);
 			service.insertArticle(vo);
 		}else {
-			//파일 첨부 했을때
+			// 파일 첨부 했을 때
 			
-			//글등록
+			// 글 등록
 			vo.setFile(1);
 			int no = service.insertArticle(vo);
 			
-			//파일 업로드
+			// 파일 업로드
 			FileVo fvo = service.fileUpload(vo.getFname());
 			
-			//파일 테이블 insert
+			// 파일 등록
 			fvo.setParent(no);
 			service.insertFile(fvo);
 		}
 		
-		
-		
 		return "redirect:/article/list";
 	}
-	
 	
 	@GetMapping("/article/view")
 	public String view(@ModelAttribute("sessUser") UserVo sessUser) {
@@ -102,5 +118,4 @@ public class ArticleController {
 		
 		return "/article/modify";
 	}
-	
 }

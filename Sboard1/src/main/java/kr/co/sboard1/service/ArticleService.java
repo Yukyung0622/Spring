@@ -43,13 +43,31 @@ public class ArticleService {
 		dao.insertFile(vo);
 	}
 	
-	
 	public ArticleVo selectArticle(int no) {
 		return null;
 	}
-	public List<ArticleVo> selectArticles(){
-		return null;
+	public List<ArticleVo> selectArticles(int start){
+		
+		// JPA
+		//return dao.selectArticles(start);
+		
+		// MyBatis
+		List<ArticleVo> articles = dao.selectArticles(start);
+		
+		return articles;
 	}
+	
+	public int selectCountTotal() {
+		
+		// JPA
+		
+		
+		// MyBatis
+		int total = dao.selectCountTotal();
+		
+		return total;
+	}
+	
 	public void updateArticle(ArticleVo vo) {}
 	public void deleteArticle(int no) {}
 
@@ -86,5 +104,51 @@ public class ArticleService {
 		
 	}
 	
+	public int getLastPageNum(int total){
+		
+		int lastPageNum = 0;
+		
+		if(total % 10 == 0) {
+			lastPageNum = total / 10;
+		}else {
+			lastPageNum = total / 10 + 1;
+		}
+		
+		return lastPageNum;
+	}
+	
+	public int getCurrentPage(String pg) {
+		
+		int currentPage = 1;
+		
+		if(pg != null) {
+			currentPage = Integer.parseInt(pg);
+		}
+		
+		return currentPage;
+	}
+	
+	public int getLimitStart(int currentPage) {
+		return (currentPage - 1) * 10;
+	}
+	
+	public int getPageStartNum(int total, int start){
+		return total - start;
+	}
+	
+	public int[] getPageGroup(int currentPage, int lastPageNum) {
+		
+		int groupCurrent = (int) Math.ceil(currentPage/10.0);
+		int groupStart = (groupCurrent - 1) * 10 + 1; 
+		int groupEnd = groupCurrent * 10;
+		
+		if(groupEnd > lastPageNum) {
+			groupEnd = lastPageNum;
+		}
+		
+		int[] groups = {groupStart, groupEnd};
+		
+		return groups;
+	}
 	
 }
