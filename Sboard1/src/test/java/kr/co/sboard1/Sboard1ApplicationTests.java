@@ -41,10 +41,10 @@ class Sboard1ApplicationTests {
 		vo.setRegip("128.0.0.1");
 		
 		//JPA
-		articleRepo.save(vo);
+		//articleRepo.save(vo);
 		
 		//MyBatis
-		//articledao.insertArticle(vo);
+		articledao.insertArticle(vo);
 		
 		//방금 INSERT 한 글번호 리턴 (JPA, MyBatis)
 		int no = vo.getNo();

@@ -1,0 +1,30 @@
+2022-04-21 13:28:14.904  INFO 14184 --- [restartedMain] kr.co.sboard1.Sboard1Application         : Starting Sboard1Application using Java 17.0.2 on DESKTOP-HJR5A0L with PID 14184 (C:\Users\bigdata\Desktop\workspace\Spring\Sboard1\target\classes started by bigdata in C:\Users\bigdata\Desktop\workspace\Spring\Sboard1)
+2022-04-21 13:28:14.906  INFO 14184 --- [restartedMain] kr.co.sboard1.Sboard1Application         : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 13:28:14.945  INFO 14184 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-21 13:28:14.946  INFO 14184 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-21 13:28:15.496  INFO 14184 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-21 13:28:15.548  INFO 14184 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 3 JPA repository interfaces.
+2022-04-21 13:28:16.102  INFO 14184 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-21 13:28:16.114  INFO 14184 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-21 13:28:16.114  INFO 14184 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-21 13:28:16.182  INFO 14184 --- [restartedMain] o.a.c.c.C.[.[localhost].[/Sboard1]       : Initializing Spring embedded WebApplicationContext
+2022-04-21 13:28:16.182  INFO 14184 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1234 ms
+2022-04-21 13:28:16.380  INFO 14184 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-21 13:28:16.421  INFO 14184 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-04-21 13:28:16.557  INFO 14184 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-21 13:28:16.645  INFO 14184 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-21 13:28:16.651  WARN 14184 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-04-21 13:28:16.879  INFO 14184 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-21 13:28:16.892  INFO 14184 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-04-21 13:28:17.662  INFO 14184 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-21 13:28:17.671  INFO 14184 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-21 13:28:18.335  WARN 14184 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-21 13:28:18.654  INFO 14184 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-21 13:28:18.697  INFO 14184 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/Sboard1'
+2022-04-21 13:28:18.709  INFO 14184 --- [restartedMain] kr.co.sboard1.Sboard1Application         : Started Sboard1Application in 4.125 seconds (JVM running for 4.755)
+2022-04-21 13:28:31.807  INFO 14184 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[localhost].[/Sboard1]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-21 13:28:31.808  INFO 14184 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-21 13:28:31.809  INFO 14184 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-21 13:29:18.583  INFO 14184 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-21 13:29:18.587  INFO 14184 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-21 13:29:18.594  INFO 14184 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
