@@ -4352,3 +4352,7 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/boar
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
 2022-04-26 14:05:57.337  WARN 3016 --- [HikariPool-37 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-37 - Thread starvation or clock leap detected (housekeeper delta=21m10s563ms321µs100ns).
+2022-04-26 18:18:55.915  INFO 3016 --- [RMI TCP Connection(659)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-04-26 18:18:55.931  INFO 3016 --- [RMI TCP Connection(659)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-26 18:18:55.933  INFO 3016 --- [RMI TCP Connection(659)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-37 - Shutdown initiated...
+2022-04-26 18:18:55.935  INFO 3016 --- [RMI TCP Connection(659)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-37 - Shutdown completed.
