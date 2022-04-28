@@ -94,6 +94,7 @@ public class BoardController {
 			// 파일 등록
 			fvo.setParent(no);
 			service.insertFile(fvo);
+			System.out.println("fvo :"+fvo.getNName());
 		}
 		return "redirect:/board/list?cate="+vo.getCate()+"&type="+vo.getType();
 	}
@@ -135,5 +136,4 @@ public class BoardController {
 		// 파일 다운로드
 		service.fileDownload(resp, fvo);
 	}
-	
 }

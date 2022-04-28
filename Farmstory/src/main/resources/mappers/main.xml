@@ -3,4 +3,11 @@
 <mapper namespace="kr.co.farmstory.dao.MainDao">
 
 
+	<select id="selectLatest" resultType="kr.co.farmstory.vo.ArticleVo">
+		SELECT * FROM `Board_article` 
+		WHERE `type`=#{type}
+		ORDER BY `no` DESC
+		LIMIT 5;
+	</select>
+
 </mapper>

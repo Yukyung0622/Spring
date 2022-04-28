@@ -3,6 +3,8 @@ package kr.co.farmstory.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -72,7 +74,12 @@ public class UserController {
 	}
 	
 	@PostMapping("/user/register")
-	public String register(UserVo vo) {
+	public String register(UserVo vo, HttpServletRequest req) {
+		
+		String regip = req.getRemoteAddr();
+		vo.setRegip(regip);
+		
+		
 		service.insertUser(vo);
 		return "redirect:/user/login";
 	}

@@ -1,10 +1,20 @@
 package kr.co.farmstory.service;
 
-import org.apache.ibatis.annotations.Mapper;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Mapper
+import kr.co.farmstory.dao.MainDao;
+import kr.co.farmstory.vo.ArticleVo;
+
 @Service
 public class MainService {
 
+	@Autowired
+	private MainDao dao;
+	
+	public List<ArticleVo> selectLatest(String type) {
+		return dao.selectLatest(type);
+	}
 }

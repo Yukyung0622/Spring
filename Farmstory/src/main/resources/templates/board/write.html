@@ -19,7 +19,7 @@
             		 3. form 태그 enctype="multipart/form-data" 속성 추가
             		 4. src/main/resources/static/file 디렉터리 생성
             	-->
-                <form th:action="@{/board/write}" method="post" enctype="multipart/form-data">
+                <form th:action="@{/board/write}" method="post" enctype="Multipart/form-data">
                 	<input type="hidden" name="cate" th:value="${cate}"/>
                 	<input type="hidden" name="type" th:value="${type}"/>
                 	
