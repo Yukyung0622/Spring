@@ -117,12 +117,34 @@ public class BoardController {
 	}
 	
 	@GetMapping("/board/modify")
-	public String modify(@ModelAttribute("sessUser") UserVo sessUser) {
+	public String modify(@ModelAttribute("sessUser") UserVo sessUser, String cate, String type, int no, Model model) {
 		// 로그인 여부 확인
-		if(sessUser == null)
+		if(sessUser == null) {
 			return "redirect:/user/login?success=102";
+		}
+		
+		ArticleVo article = service.selectArticle(no);
+		
+		model.addAttribute("cate", cate);
+		model.addAttribute("type", type);
+		model.addAttribute("article", article);
 		
 		return "/board/modify";
+	}
+	
+	@PostMapping("/board/modify")
+	public String modify(@ModelAttribute("sessUser") UserVo sessUser, ArticleVo vo, String cate, String type) {
+		// 로그인 여부 확인
+		if(sessUser == null) {
+			return "redirect:/user/login?success=102";
+		}
+		//System.out.println("no : "+vo.getNo());
+		//System.out.println("cate : "+cate);
+		//System.out.println("type : "+type);
+		
+		service.updateArticle(vo);
+		
+		return "redirect:/board/list?cate="+cate+"&type="+type;
 	}
 	
 	

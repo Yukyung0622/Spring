@@ -67,7 +67,11 @@
 		SELECT * FROM `Board_file` WHERE `fid`=#{fid};
 	</select>
 	
-
+	<update id="updateArticle">
+		UPDATE `Board_article` SET 
+		`title`=#{title},
+		`content`=#{content} WHERE `no`=#{no};
+	</update>
 
 
 </mapper>
