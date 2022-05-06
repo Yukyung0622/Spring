@@ -149,7 +149,7 @@ public class BoardController {
 	
 	@GetMapping("/board/delete")
 	public String delete(@ModelAttribute("sessUser") UserVo sessUser, String cate, String type, int no) {
-		// 로그인 여부 확인
+		// 로그인 여부 확인 12345
 		if(sessUser == null) {
 			return "redirect:/user/login?success=102";
 		}
