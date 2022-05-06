@@ -72,6 +72,10 @@
 		`title`=#{title},
 		`content`=#{content} WHERE `no`=#{no};
 	</update>
+	
+	<delete id="deleteArticle">
+		DELETE FROM `Board_article` WHERE `no`=#{no};
+	</delete>
 
 
 </mapper>

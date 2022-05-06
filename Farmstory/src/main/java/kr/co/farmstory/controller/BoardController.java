@@ -147,6 +147,19 @@ public class BoardController {
 		return "redirect:/board/list?cate="+cate+"&type="+type;
 	}
 	
+	@GetMapping("/board/delete")
+	public String delete(@ModelAttribute("sessUser") UserVo sessUser, String cate, String type, int no) {
+		// 로그인 여부 확인
+		if(sessUser == null) {
+			return "redirect:/user/login?success=102";
+		}
+//		System.out.println("no : "+no);
+		
+		service.deleteArticle(no);
+		
+		return "redirect:/board/list?cate="+cate+"&type="+type;
+	}
+	
 	
 	@GetMapping("/board/filedownload")
 	public void filedownload(int fid, HttpServletResponse resp) {
