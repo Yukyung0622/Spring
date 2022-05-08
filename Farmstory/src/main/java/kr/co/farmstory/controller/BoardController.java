@@ -31,7 +31,7 @@ public class BoardController {
 		return null;
 	}
 	
-	
+	//list
 	@GetMapping("/board/list")
 	public String list(Model model, String cate, String type, String pg) {
 		
@@ -55,6 +55,7 @@ public class BoardController {
 		return "/board/list";
 	}
 	
+	//write
 	@GetMapping("/board/write")
 	public String write(@ModelAttribute("sessUser") UserVo sessUser, Model model, String cate, String type) {
 		// 로그인 여부 확인
@@ -94,12 +95,12 @@ public class BoardController {
 			// 파일 등록
 			fvo.setParent(no);
 			service.insertFile(fvo);
-			System.out.println("fvo :"+fvo.getNName());
+			//System.out.println("fvo :"+fvo.getNName());
 		}
 		return "redirect:/board/list?cate="+vo.getCate()+"&type="+vo.getType();
 	}
 	
-	
+	//view
 	@GetMapping("/board/view")
 	public String view(@ModelAttribute("sessUser") UserVo sessUser, Model model, String cate, String type, int no) {
 		// 로그인 여부 확인
@@ -147,18 +148,28 @@ public class BoardController {
 		return "redirect:/board/list?cate="+cate+"&type="+type;
 	}
 	
+	//delete
 	@GetMapping("/board/delete")
-	public String delete(@ModelAttribute("sessUser") UserVo sessUser, String cate, String type, int no) {
-		// 로그인 여부 확인 12345
+	public String delete(@ModelAttribute("sessUser") UserVo sessUser, String cate, String type, int no, int fid, String nName) {
+		// 로그인 여부 확인
 		if(sessUser == null) {
 			return "redirect:/user/login?success=102";
 		}
 //		System.out.println("no : "+no);
+		//System.out.println("fid : "+fid);
+		System.out.println("nName"+nName);
 		
-		service.deleteArticle(no);
+		if(fid == 0) {
+			service.deleteArticle(no);
+		}else {
+			service.deleteArticle(no);
+			service.deleteFile(fid);
+			service.deleteAttachments(nName);
+		}
 		
 		return "redirect:/board/list?cate="+cate+"&type="+type;
 	}
+	
 	
 	
 	@GetMapping("/board/filedownload")

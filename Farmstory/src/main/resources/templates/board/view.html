@@ -32,7 +32,7 @@
                 </tr>
             </table>
             <div>
-                <a th:href="@{/board/delete(cate=${cate}, type=${type}, no=${article.no})}" class="btnDelete">삭제</a>
+                <a th:href="@{/board/delete(cate=${cate}, type=${type}, no=${article.no}, fid=${article.fvo.fid}, nName=${article.fvo.nName})}" class="btnDelete">삭제</a>
                 <a th:href="@{/board/modify(cate=${cate}, type=${type}, no=${article.no})}" class="btnModify">수정</a>
                 <a th:href="@{/board/list(cate=${cate}, type=${type})}" class="btnList">목록</a>
             </div>  

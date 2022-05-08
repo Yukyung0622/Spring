@@ -47,16 +47,32 @@ public class BoardService {
 	}
 	
 	
-	
 	public void updateArticle(ArticleVo vo) {
 		dao.updateArticle(vo);
 	}
+	
 	public void deleteArticle(int no) {
 		dao.deleteArticle(no);
 	}
 	
+	public void deleteFile(int fid) {
+		dao.deleteFile(fid);
+	}
+	
 	@Value("${spring.servlet.multipart.location}")
 	private String uploadDir;
+	public void deleteAttachments(String nName) {
+		//파일 저장 경로(path) 확인
+		String path = new File(uploadDir).getAbsolutePath()+"/"+nName;
+		
+		//System.out.println("path : "+path);
+		
+		//파일 삭제
+		File attachment = new File(path);
+		attachment.delete();
+	}
+	
+	
 	
 	public FileVo fileUpload(MultipartFile fname) {
 		
