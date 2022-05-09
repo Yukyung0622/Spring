@@ -134,7 +134,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("/board/modify")
-	public String modify(@ModelAttribute("sessUser") UserVo sessUser, ArticleVo vo, String cate, String type) {
+	public String modify(@ModelAttribute("sessUser") UserVo sessUser, ArticleVo vo, String cate, String type, int fid) {
 		// 로그인 여부 확인
 		if(sessUser == null) {
 			return "redirect:/user/login?success=102";
@@ -143,7 +143,13 @@ public class BoardController {
 		//System.out.println("cate : "+cate);
 		//System.out.println("type : "+type);
 		
-		service.updateArticle(vo);
+		if(fid == 0) {
+			service.updateArticle(vo);
+		}else {
+			
+			
+		}
+		
 		
 		return "redirect:/board/list?cate="+cate+"&type="+type;
 	}
