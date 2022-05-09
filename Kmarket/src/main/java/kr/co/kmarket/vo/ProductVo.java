@@ -46,6 +46,10 @@ public class ProductVo {
 	private String etc5;
 	
 	//추가필드
+	private int salePrice;
+	private int order;
+	private int start;
+	
 	private MultipartFile img1;
 	private MultipartFile img2;
 	private MultipartFile img3;
@@ -57,3 +61,24 @@ public class ProductVo {
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
