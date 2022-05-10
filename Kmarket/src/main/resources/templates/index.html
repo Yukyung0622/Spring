@@ -60,15 +60,15 @@
                           <img th:src="@{/thumb/{cate1}/{cate2}/{img}(cate1=${product.cate1}, cate2=${product.cate2}, img=${product.thumb1})}" alt="t1">
                         </div>
                         <article>
-                        <h2>[[${product.name}]]</h2>
-                        <div class="org_price">
-                          <del>[[${#numbers.formatInteger(product.price, 3, 'COMMA')}]]</del>
-                          <span>[[${product.discount}]]%</span>
-                        </div>
-                        <div class="dis_price">
-                          <ins>[[${#numbers.formatInteger(product.salePrice, 3, 'COMMA')}]]</ins>
-                        </div>
-                        </article>
+	                        <h2>[[${product.name}]]</h2>
+	                        <div class="org_price">
+	                          <del>[[${#numbers.formatInteger(product.price, 3, 'COMMA')}]]</del>
+                              <span>[[${product.discount}]]%</span>
+	                        </div>
+	                        <div class="dis_price">
+	                          <ins>[[${#numbers.formatInteger(product.salePrice, 3, 'COMMA')}]]</ins>
+	                        </div>
+						</article>
                       </a>
                     </li>
                   </ol>
@@ -154,7 +154,7 @@
                     <article th:each="product:${productsDiscount}">
                         <a th:href="@{/product/view(pid=${product.pid})}">
                             <div class="thumb">
-                            	<img th:src="@{/thumb/{cate1}/{cate2}/{img}(cate1=${product.cate1}, cate2=${product.cate2}, img=${product.thumb1})}" alt="t1">
+                              <img th:src="@{/thumb/{cate1}/{cate2}/{img}(cate1=${product.cate1}, cate2=${product.cate2}, img=${product.thumb1})}" alt="t1">
                             </div>
                             <h2>[[${product.name}]]</h2>
                             <p>[[${product.desc}]]</p>
