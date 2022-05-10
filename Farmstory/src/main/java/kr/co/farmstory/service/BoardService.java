@@ -51,6 +51,10 @@ public class BoardService {
 		dao.updateArticle(vo);
 	}
 	
+	public void updateFile(FileVo vo) {
+		dao.updateFile(vo);
+	}
+	
 	public void deleteArticle(int no) {
 		dao.deleteArticle(no);
 	}

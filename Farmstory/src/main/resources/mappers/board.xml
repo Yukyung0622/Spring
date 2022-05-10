@@ -73,6 +73,12 @@
 		`content`=#{content} WHERE `no`=#{no};
 	</update>
 	
+	<update id="updateFile">
+		UPDATE `Board_file` 
+		SET `oName`=#{oName}, `nName`= #{nName}
+		WHERE `fid`=#{fid};
+	</update>
+	
 	<delete id="deleteArticle">
 		DELETE FROM `Board_article` WHERE `no`=#{no};
 	</delete>
