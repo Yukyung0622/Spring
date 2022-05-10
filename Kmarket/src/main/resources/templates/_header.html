@@ -10,8 +10,8 @@
     </div>
     <div class="logo">
         <div>
-            <a href="#"><img th:src="@{/img/header_logo.png}" alt="로고"/></a>
-            <form action="#">
+            <a th:href="@{/index}"><img th:src="@{/img/header_logo.png}" alt="로고"/></a>
+            <form th:action="@{product/search}">
                 <input type="text" name="search"/>
                 <button><i class="fa fa-search"></i></button>
             </form>                
