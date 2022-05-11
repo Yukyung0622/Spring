@@ -1,27 +1,74 @@
 package kr.co.kmarket.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import kr.co.kmarket.service.ProductService;
+import kr.co.kmarket.vo.CartVo;
 import kr.co.kmarket.vo.CategoriesVo;
+import kr.co.kmarket.vo.MemberVo;
 import kr.co.kmarket.vo.ProductVo;
 
+@SessionAttributes("sessMember")
 @Controller
 public class ProductController {
 
 	@Autowired
 	private ProductService service;
 	
+	// 최초에 sessMember값 초기화하는 메서드 
+	@ModelAttribute("sessMember")
+	public MemberVo setMemberVo() {
+		return null;
+	}
+	
 	
 	@GetMapping("/product/cart")
-	public String cart() {
-		return "/product/cart";
+	public String cart(@ModelAttribute("sessMember")MemberVo sessMember, Model model) {
+		
+		if(sessMember == null) {
+			return "redirect:/member/login";
+		}else {
+			
+			String uid = sessMember.getUid();
+			List<CartVo> carts = service.selectCarts(uid);
+			
+//			System.out.println("carts 크키"+carts.size());
+			
+			model.addAttribute("carts", carts);
+			
+			return "/product/cart";
+		}
+		
 	}
+	
+	@ResponseBody
+	@PostMapping("/product/cart")
+	public Map<String, Integer> cart(CartVo vo) {
+		
+		int result = service.insertCart(vo);
+		
+		//크롬에서 <Talend API Tester - Free Edition>들어가서 확인해야됨
+//		int result = 1; 
+		
+		Map<String, Integer> jsonData = new HashMap<>();
+		jsonData.put("result", result);
+		
+		return jsonData;
+	}
+	
 	@GetMapping("/product/complete")
 	public String complete() {
 		return "/product/complete";
