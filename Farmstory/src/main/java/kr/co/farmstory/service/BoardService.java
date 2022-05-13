@@ -32,6 +32,10 @@ public class BoardService {
 		dao.insertFile(vo);
 	}
 	
+	public void insertComment(ArticleVo vo) {
+		dao.insertComment(vo);
+	}
+	
 	
 	public int selectCountTotal(String type) {
 		return dao.selectCountTotal(type);
@@ -51,8 +55,16 @@ public class BoardService {
 		dao.updateArticle(vo);
 	}
 	
-	public void updateFile(FileVo vo) {
-		dao.updateFile(vo);
+	public void updateCount(int no) {
+		dao.updateCount(no);
+	}
+	
+//	public void updateFile(FileVo vo) {
+//		dao.updateFile(vo);
+//	}
+	
+	public void updateFileCount(int fid) {
+		dao.updateFileCount(fid);
 	}
 	
 	public void deleteArticle(int no) {

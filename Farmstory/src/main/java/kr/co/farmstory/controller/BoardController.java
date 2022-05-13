@@ -102,13 +102,14 @@ public class BoardController {
 	
 	//view
 	@GetMapping("/board/view")
-	public String view(@ModelAttribute("sessUser") UserVo sessUser, Model model, String cate, String type, int no) {
+	public String view(@ModelAttribute("sessUser") UserVo sessUser, Model model, String cate, String type, int no, ArticleVo vo) {
 		// 로그인 여부 확인
 		if(sessUser == null)
 			return "redirect:/user/login?success=102";
 		
 		ArticleVo article = service.selectArticle(no);
-		
+		service.updateCount(no);
+		service.insertComment(vo);
 		
 		model.addAttribute("cate", cate);
 		model.addAttribute("type", type);
@@ -116,6 +117,8 @@ public class BoardController {
 		
 		return "/board/view";
 	}
+	
+	
 	
 	@GetMapping("/board/modify")
 	public String modify(@ModelAttribute("sessUser") UserVo sessUser, String cate, String type, int no, Model model) {
@@ -143,16 +146,19 @@ public class BoardController {
 		//System.out.println("cate : "+cate);
 		//System.out.println("type : "+type);
 		
-		if(fid == 0) {
-			service.updateArticle(vo);
-		}else {
-			
-			
-		}
+		service.updateArticle(vo);
+		
+//		if(fid == 0) {
+//			
+//		}else {
+//			//service.updateFile(vo);
+//			
+//		}
 		
 		
 		return "redirect:/board/list?cate="+cate+"&type="+type;
 	}
+	
 	
 	//delete
 	@GetMapping("/board/delete")
@@ -181,6 +187,7 @@ public class BoardController {
 	@GetMapping("/board/filedownload")
 	public void filedownload(int fid, HttpServletResponse resp) {
 		// 파일 다운로드 카운트 +1
+		service.updateFileCount(fid);
 		
 		// 파일 다운로드 정보조회
 		FileVo fvo = service.selectFile(fid);

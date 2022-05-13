@@ -19,6 +19,16 @@
 			`rdate`=NOW();
 	</insert>
 	
+	<insert id="insertComment">
+		INSERT INTO `Board_article` SET 
+		`parent`=#{parent},
+		`comment`=#{comment}, 
+		`content`=#{content}, 
+		`uid`=#{uid}, 
+		`regip`=#{regip}, 
+		`rdate`=NOW();
+	</insert>
+	
 	<select id="selectCountTotal" resultType="int">
 		SELECT COUNT(`no`) FROM `Board_article` WHERE `parent`=0 AND `type`=#{type};
 	</select>
@@ -73,11 +83,21 @@
 		`content`=#{content} WHERE `no`=#{no};
 	</update>
 	
+	<update id="updateCount">
+		UPDATE `Board_article` SET `hit` = hit + 1 WHERE `no`=#{no};
+	</update>
+	
+	<update id="updateFileCount">
+		UPDATE `Board_file` SET `download` = `download` + 1 WHERE `fid`=#{fid};
+	</update>
+	
+	<!-- 
 	<update id="updateFile">
 		UPDATE `Board_file` 
 		SET `oName`=#{oName}, `nName`= #{nName}
 		WHERE `fid`=#{fid};
 	</update>
+	 -->
 	
 	<delete id="deleteArticle">
 		DELETE FROM `Board_article` WHERE `no`=#{no};
