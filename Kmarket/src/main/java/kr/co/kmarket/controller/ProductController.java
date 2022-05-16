@@ -19,6 +19,7 @@ import kr.co.kmarket.service.ProductService;
 import kr.co.kmarket.vo.CartVo;
 import kr.co.kmarket.vo.CategoriesVo;
 import kr.co.kmarket.vo.MemberVo;
+import kr.co.kmarket.vo.OrderVo;
 import kr.co.kmarket.vo.ProductVo;
 
 @SessionAttributes("sessMember")
@@ -45,13 +46,21 @@ public class ProductController {
 			String uid = sessMember.getUid();
 			List<CartVo> carts = service.selectCarts(uid);
 			
-//			System.out.println("carts 크키"+carts.size());
-			
 			model.addAttribute("carts", carts);
 			
 			return "/product/cart";
 		}
+	}
+	
+	@ResponseBody
+	@GetMapping("/product/cartDelete")
+	public Map<String, Integer> cartDelete(int[] cids) {
+		int result = service.deleteCart(cids);
 		
+		Map<String, Integer> map = new HashMap<>();
+		map.put("result", result);
+		
+		return map;
 	}
 	
 	@ResponseBody
@@ -59,9 +68,7 @@ public class ProductController {
 	public Map<String, Integer> cart(CartVo vo) {
 		
 		int result = service.insertCart(vo);
-		
-		//크롬에서 <Talend API Tester - Free Edition>들어가서 확인해야됨
-//		int result = 1; 
+		//int result = 1;
 		
 		Map<String, Integer> jsonData = new HashMap<>();
 		jsonData.put("result", result);
@@ -105,14 +112,35 @@ public class ProductController {
 		
 		return "/product/view";
 	}
+	
 	@GetMapping("/product/order")
 	public String order() {
 		return "/product/order";
 	}
+	
+	@ResponseBody
+	@PostMapping("/product/order")
+	public Map<String, Integer> order(OrderVo vo) {
+		
+		// 주문장 등록
+		int oid = service.insertOrder(vo);
+		
+		// 개별 상품 등록
+		int[] counts = vo.getCounts();
+		int i = 0;
+		for(int pid : vo.getPids()) {
+			service.insertOrderDetail(oid, pid, counts[i]);
+			i++;
+		}
+		
+		Map<String, Integer> map = new HashMap<>();
+		map.put("result", oid);
+		
+		return map;
+	}
+	
 	@GetMapping("/product/search")
 	public String search() {
 		return "/product/search";
 	}
-	
-	
 }

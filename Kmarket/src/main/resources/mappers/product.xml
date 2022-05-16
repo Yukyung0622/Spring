@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.kmarket.dao.ProductDao">
+	
 
 	<select id="selectProduct" resultType="kr.co.kmarket.vo.ProductVo">
 		SELECT *, FLOOR(`price` * (1 - `discount`/100)) AS `salePrice` FROM `km_product` 
 		WHERE `pid`=#{pid};
 	</select>
-
+	
+	
 	<select id="selectProducts" resultType="kr.co.kmarket.vo.ProductVo">
 		SELECT *, FLOOR(`price` * (1 - `discount`/100)) AS `salePrice` FROM `km_product` 
 		WHERE `cate1`=#{cate1} AND `cate2`=#{cate2}
@@ -26,7 +28,11 @@
 		ON c1.cate1 = c2.cate1
 		WHERE c2.cate1=#{cate1} AND c2.cate2=#{cate2};
 	</select>
+
+
+
 	
+	<!-- 장바구니 -->
 	<insert id="insertCart">
 		INSERT INTO `km_product_cart` SET
 		`uid`=#{uid},
@@ -41,11 +47,39 @@
 	</insert>
 	
 	<select id="selectCarts" resultType="kr.co.kmarket.vo.CartVo">
-		SELECT a.*, b.cate1, b.cate2, b.name, b.desc, b.thumb1 
-		FROM `km_product_cart` AS a 
+		SELECT a.*, b.cate1, b.cate2, b.name, b.desc, b.thumb1
+		FROM `km_product_cart` AS a
 		JOIN `km_product` AS b
-		ON a.pid = b.pid 
-		WHERE `uid`=#{uid} ;
+		ON a.pid = b.pid		
+		WHERE `uid`=#{uid};
 	</select>
+	
+	<delete id="deleteCart">
+		DELETE FROM `km_product_cart` WHERE `cid` IN
+		<foreach collection="array" item="cid" open="(" close=")" separator=",">
+			#{cid}
+		</foreach>
+	</delete>
+	
+	<!-- 주문 -->
+	<insert id="insertOrder" useGeneratedKeys="true" keyProperty="oid">
+		INSERT INTO `km_product_order` SET 
+			`uid`=#{uid},
+			`count`=#{count},
+			`price`=#{price},
+			`discount`=#{discount},
+			`delivery`=#{delivery},
+			`point`=#{point},
+			`total`=#{total},
+			`rdate`=NOW();
+	</insert>
+	
+	<insert id="insertOrderDetail">
+		INSERT INTO `km_product_order_detail` SET
+			`oid`=#{oid},
+			`pid`=#{pid},
+			`cnt`=#{count};
+	</insert>
+
 
 </mapper>
