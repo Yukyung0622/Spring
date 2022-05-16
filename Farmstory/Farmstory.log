@@ -2528,3 +2528,7 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'content' cannot be nu
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.62.jar:9.0.62]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
+2022-05-13 18:14:57.445  INFO 5416 --- [RMI TCP Connection(306)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-05-13 18:14:57.457  INFO 5416 --- [RMI TCP Connection(306)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-13 18:14:57.458  INFO 5416 --- [RMI TCP Connection(306)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-43 - Shutdown initiated...
+2022-05-13 18:14:57.460  INFO 5416 --- [RMI TCP Connection(306)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-43 - Shutdown completed.
