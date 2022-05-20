@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.co.kmarket.admin.dao.AdminMainDao"></mapper>
+<mapper namespace="kr.co.kmarket.admin.dao.AdminMainDao">
+
+	<select id="selectCate1" resultType="kr.co.kmarket.admin.vo.Cate1Vo">
+		SELECT * FROM `km_product_cate1`;	
+	</select>
+	
+	<select id="selectCate2" resultType="kr.co.kmarket.admin.vo.Cate2Vo">
+		SELECT * FROM `km_product_cate2` WHERE `cate1`=#{cate1};	
+	</select>
+
+</mapper>
