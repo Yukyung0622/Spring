@@ -12,12 +12,17 @@ import kr.co.farmstory.vo.UserVo;
 @Repository
 public interface UserDao {
 
-	public void insertUser(UserVo vo);
+	public void insertUser(UserVo uv);
+	
 	public TermsVo selectTerms();
-	public UserVo selectUser(UserVo vo);
+	public UserVo selectUser(UserVo uv);
 	public List<UserVo> selectUsers();
-	public int selectCountUserUid(String uid);
-	public void updateUser(UserVo vo);
+	public void updateUser(UserVo uv);
 	public void deleteUser(String uid);
 	
+	//Validation
+	public int countUserUid(String uid);
+	public int countUserNick(String nick);
+	public int countUserEmail(String email);
+	public int countUserHp(String hp);
 }

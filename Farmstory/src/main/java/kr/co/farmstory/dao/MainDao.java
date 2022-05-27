@@ -1,5 +1,6 @@
 package kr.co.farmstory.dao;
 
+
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -11,6 +12,8 @@ import kr.co.farmstory.vo.ArticleVo;
 @Repository
 public interface MainDao {
 
-	public List<ArticleVo> selectLatest(String type);	
+	public List<ArticleVo> selectLatests(String type);
+
+	public List<ArticleVo> selectCumuLatests(String type);
 	
 }

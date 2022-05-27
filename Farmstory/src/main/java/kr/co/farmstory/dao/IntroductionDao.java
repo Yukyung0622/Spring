@@ -1,5 +1,6 @@
 package kr.co.farmstory.dao;
 
+
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -7,6 +8,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IntroductionDao {
 
-	
-	
 }

@@ -1,15 +1,20 @@
 package kr.co.farmstory.vo;
 
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 public class UserVo {
+
 	private String uid;
 	private String pass;
-	private String pass1;
-	private String pass2;
 	private String name;
 	private String nick;
 	private String email;
@@ -19,5 +24,9 @@ public class UserVo {
 	private String addr1;
 	private String addr2;
 	private String regip;
-	private String rdate;
+	
+	@Column(updatable = false)
+	@CreationTimestamp
+	private Timestamp rdate;
+	
 }

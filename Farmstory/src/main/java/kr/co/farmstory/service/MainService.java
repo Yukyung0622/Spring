@@ -10,11 +10,15 @@ import kr.co.farmstory.vo.ArticleVo;
 
 @Service
 public class MainService {
-
+	
 	@Autowired
 	private MainDao dao;
 	
-	public List<ArticleVo> selectLatest(String type) {
-		return dao.selectLatest(type);
+	public List<ArticleVo> selectLatests(String type) {
+		return dao.selectLatests(type);
+	}
+	
+	public List<ArticleVo> selectCumuLatests(String type){
+		return dao.selectCumuLatests(type);
 	}
 }

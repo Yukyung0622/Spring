@@ -2,13 +2,11 @@ package kr.co.farmstory.vo;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class ArticleVo {
-	
+
 	private int no;
 	private int parent;
 	private int comment;
@@ -20,12 +18,11 @@ public class ArticleVo {
 	private String uid;
 	private String regip;
 	private String rdate;
+	private String user_id;
 	
-	
-	// 추가필드
-	private String cate;
+	//추가필드
+	private UserVo user;
+	private FileVo fv;
 	private MultipartFile fname;
-	private String nick;
-	private FileVo fvo;
-
+	
 }
