@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>express</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fullpage.custom.css}" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+	<style>
+
+
+.form-control {
+    width: 13%;
+}
+
+#delivery{
+    position: relative;
+    top: 100px;
+    text-align: center;
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#search{
+    position: relative;
+    top: 100px;
+}
+
+.container{
+    position: relative;
+    top: 200px
+}
+
+
+
+footer {
+    position: absolute;
+    top: 120%;
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid #d1cab2;
+    box-sizing: border-box;
+}
+
+footer > div{
+    overflow: hidden;
+    position: relative;
+}
+
+
+footer > div > p:nth-child(1) {
+    left: 0;
+    font-size: 15px;
+}
+
+/* footer > div > button{
+  position: absolute;
+  top: 20px;
+} */
+
+footer > div > p:nth-child(2) {
+    font-size: 12px;
+}
+footer > div > p:nth-child(3) {
+    left: 0;
+    font-size: 12px;
+}
+
+footer > div > p:nth-child(4) {
+    left: 0;
+    top: 300px;
+    font-size: 12px;
+    color: dimgrey;
+    position: absolute;
+}
+footer > div > p:nth-child(5) {
+    right: 0;
+    bottom: 50px;
+    font-size: 12px;
+    position: absolute;
+}
+footer > div > p:nth-child(6) {
+    right: 0;
+    bottom: 30px;
+    font-size: 13px;
+
+    position: absolute;
+}
+
+
+
+	</style>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.custom.css}" />
+</head>
+<body>
+  
+  	<th:block th:include="/_header.html"/>
+
+
+
+	  <p id="delivery">당일 배송 상품은 서울/경기 일부 지역만 배송 가능합니다.</p>
+  
+	  <form class="d-flex justify-content-center" role="search" id="search">
+    
+		<input class="form-control me-2" type="search" placeholder="주소를 입력하세요" aria-label="Search">
+		<button class="btn btn-outline-success" type="submit">주소입력</button>
+	  </form>
+
+
+    <div class="container">
+      <div class="row">      
+        <div class="row gy-3">
+        <div class="row-fluid">
+          
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-dark" for="btnradio1" >꽃다발</label>
+          
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio2">꽃병</label>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <!-- <div class="card"> -->
+            <a href="#">
+            <img th:src="@{/img/product3.jpg}" alt="" class="card-img"/>
+            <p class='text-dark'>리미티드 'SUPPORT YOUR DREAM'</p>
+            <p class='text-dark'>59,900원</p>
+            </a>   
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <!-- <div class="card"> -->
+            <a href="#">
+            <img th:src="@{/img/product1.jpg}" alt="" class="card-img" />
+            <p class='text-dark'>리미티드 'SUPPORT YOUR DREAM'</p>
+            <p class='text-dark'>59,900원</p>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <!-- <div class="card"> -->
+            <a href="#">
+            <img th:src="@{/img/product3.jpg}" alt="" class="card-img" />
+            <p class='text-dark'>리미티드 'SUPPORT YOUR DREAM'</p>
+            <p class='text-dark'>59,900원</p>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <!-- <div class="card"> -->
+            <a href="#">
+            <img th:src="@{/img/product1.jpg}" alt="" class="card-img" />
+            <p class='text-dark'>리미티드 'SUPPORT YOUR DREAM'</p>
+            <p class='text-dark'>59,900원</p>
+            </a>
+        </div>
+
+  <footer>
+    <div>
+        <!-- <p><img src="/mypage/img/menu3.jpg" alt="로고" width="100px" height="100px"></p> -->
+        <p>kukka | NO REASON FOR FLOWERS</p>
+        <!-- <button type="button" class="btn btn-outline-dark btn-sm">고객센터></button> -->
+        <p>
+          고객센터 1661-1031<br />
+          AM 10:00 - PM 18:00 점심시간 13:00-14:00 (주말&공휴일휴무)<br />
+          꾸까(KUKKA) | 대표자 박춘화| 사업자 등록번호 264-81-32594 | 사업자정보확인 | 서울특별시 서초구 명달로 9 방배빌딩 1층 KUKKA | 기업공시 | 통신판매신고번호
+        </p>
+        <p>@KUKKA, Inc. All rights reserved.</p>
+        <p>공지사항 | 배송정책 | 회원멤버십</p>
+        <p>이용약관 개인정보 처리방침</p>
+    </div>              
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>

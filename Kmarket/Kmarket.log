@@ -1,93 +1,14 @@
-2022-05-06 13:16:28.742  INFO 9340 --- [restartedMain] kr.co.kmarket.KmarketApplication         : Starting KmarketApplication using Java 17.0.2 on DESKTOP-HJR5A0L with PID 9340 (C:\Users\bigdata\Desktop\workspace\Spring\Kmarket\target\classes started by bigdata in C:\Users\bigdata\Desktop\workspace\Spring\Kmarket)
-2022-05-06 13:16:28.751  INFO 9340 --- [restartedMain] kr.co.kmarket.KmarketApplication         : No active profile set, falling back to 1 default profile: "default"
-2022-05-06 13:16:28.831  INFO 9340 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-05-06 13:16:28.833  INFO 9340 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-05-06 13:16:29.613  INFO 9340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-05-06 13:16:29.631  INFO 9340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
-2022-05-06 13:16:30.269  INFO 9340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-05-06 13:16:30.283  INFO 9340 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-05-06 13:16:30.283  INFO 9340 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
-2022-05-06 13:16:30.355  INFO 9340 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-05-06 13:16:30.355  INFO 9340 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1521 ms
-2022-05-06 13:16:30.561  INFO 9340 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-05-06 13:16:30.606  INFO 9340 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
-2022-05-06 13:16:30.747  INFO 9340 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-05-06 13:16:30.841  INFO 9340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-05-06 13:16:30.846  WARN 9340 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-05-06 13:16:31.143  INFO 9340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-05-06 13:16:31.156  INFO 9340 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2022-05-06 13:16:31.912  INFO 9340 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-05-06 13:16:31.921  INFO 9340 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-05-06 13:16:32.242  WARN 9340 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-05-06 13:16:32.440  INFO 9340 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-05-06 13:16:32.642  INFO 9340 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-05-06 13:16:32.690  INFO 9340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-05-06 13:16:32.700  INFO 9340 --- [restartedMain] kr.co.kmarket.KmarketApplication         : Started KmarketApplication in 4.302 seconds (JVM running for 4.993)
-2022-05-06 13:16:39.456  INFO 9340 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-05-06 13:16:39.456  INFO 9340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-05-06 13:16:39.457  INFO 9340 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-05-06 14:34:43.649  WARN 9340 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m11s916ms924µs500ns).
-2022-05-06 14:47:17.238  INFO 9340 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-05-06 14:47:17.241  INFO 9340 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-05-06 14:47:17.243  INFO 9340 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-05-06 14:47:17.355  INFO 9340 --- [restartedMain] kr.co.kmarket.KmarketApplication         : Starting KmarketApplication using Java 17.0.2 on DESKTOP-HJR5A0L with PID 9340 (C:\Users\bigdata\Desktop\workspace\Spring\Kmarket\target\classes started by bigdata in C:\Users\bigdata\Desktop\workspace\Spring\Kmarket)
-2022-05-06 14:47:17.355  INFO 9340 --- [restartedMain] kr.co.kmarket.KmarketApplication         : No active profile set, falling back to 1 default profile: "default"
-2022-05-06 14:47:17.499  INFO 9340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-05-06 14:47:17.503  INFO 9340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
-2022-05-06 14:47:17.590  INFO 9340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-05-06 14:47:17.591  INFO 9340 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-05-06 14:47:17.591  INFO 9340 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
-2022-05-06 14:47:17.609  INFO 9340 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-05-06 14:47:17.609  INFO 9340 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 251 ms
-2022-05-06 14:47:17.642  INFO 9340 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-05-06 14:47:17.648  INFO 9340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2022-05-06 14:47:17.648  WARN 9340 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-05-06 14:47:17.784  INFO 9340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2022-05-06 14:47:17.785  INFO 9340 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2022-05-06 14:47:18.260  INFO 9340 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-05-06 14:47:18.261  INFO 9340 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-05-06 14:47:18.342  WARN 9340 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-05-06 14:47:18.391  INFO 9340 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-05-06 14:47:18.436  INFO 9340 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-05-06 14:47:18.450  INFO 9340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-05-06 14:47:18.456  INFO 9340 --- [restartedMain] kr.co.kmarket.KmarketApplication         : Started KmarketApplication in 1.136 seconds (JVM running for 5450.89)
-2022-05-06 14:47:18.459  INFO 9340 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2022-05-06 14:47:40.709  INFO 9340 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-05-06 14:47:40.710  INFO 9340 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-05-06 14:47:40.712  INFO 9340 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-05-06 16:48:33.958  INFO 9340 --- [RMI TCP Connection(184)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-05-06 16:48:33.985  INFO 9340 --- [RMI TCP Connection(184)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-05-06 16:48:33.987  INFO 9340 --- [RMI TCP Connection(184)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2022-05-06 16:48:33.988  INFO 9340 --- [RMI TCP Connection(184)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2022-05-06 17:41:59.765  INFO 8504 --- [restartedMain] kr.co.kmarket.KmarketApplication         : Starting KmarketApplication using Java 17.0.2 on DESKTOP-HJR5A0L with PID 8504 (C:\Users\bigdata\Desktop\workspace\Spring\Kmarket\target\classes started by bigdata in C:\Users\bigdata\Desktop\workspace\Spring\Kmarket)
-2022-05-06 17:41:59.766  INFO 8504 --- [restartedMain] kr.co.kmarket.KmarketApplication         : No active profile set, falling back to 1 default profile: "default"
-2022-05-06 17:41:59.804  INFO 8504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-05-06 17:41:59.805  INFO 8504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-05-06 17:42:00.368  INFO 8504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-05-06 17:42:00.385  INFO 8504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
-2022-05-06 17:42:00.953  INFO 8504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-05-06 17:42:00.965  INFO 8504 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-05-06 17:42:00.965  INFO 8504 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
-2022-05-06 17:42:01.031  INFO 8504 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-05-06 17:42:01.031  INFO 8504 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1226 ms
-2022-05-06 17:42:01.232  INFO 8504 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-05-06 17:42:01.282  INFO 8504 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
-2022-05-06 17:42:01.418  INFO 8504 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-05-06 17:42:01.514  INFO 8504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-05-06 17:42:01.520  WARN 8504 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-05-06 17:42:01.943  INFO 8504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-05-06 17:42:01.965  INFO 8504 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2022-05-06 17:42:02.909  INFO 8504 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-05-06 17:42:02.927  INFO 8504 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-05-06 17:42:03.485  WARN 8504 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-05-06 17:42:03.719  INFO 8504 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-05-06 17:42:03.940  INFO 8504 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-05-06 17:42:04.030  INFO 8504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-05-06 17:42:04.048  INFO 8504 --- [restartedMain] kr.co.kmarket.KmarketApplication         : Started KmarketApplication in 4.601 seconds (JVM running for 5.265)
-2022-05-06 17:42:10.131  INFO 8504 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-05-06 17:42:10.132  INFO 8504 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-05-06 17:42:10.134  INFO 8504 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-05-06 17:48:49.017  INFO 8504 --- [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-05-06 17:48:49.035  INFO 8504 --- [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-05-06 17:48:49.039  INFO 8504 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-05-06 17:48:49.049  INFO 8504 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-02 00:09:20.698  WARN 65757 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=2h15m17s745ms).
+2022-06-02 02:06:22.919  WARN 65757 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=1h57m2s221ms).
+2022-06-02 04:17:38.624  WARN 65757 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=2h11m15s705ms).
+2022-06-02 06:19:38.891  WARN 65757 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=2h2m267ms).
+2022-06-02 08:17:16.416  WARN 65757 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=1h57m37s525ms).
+2022-06-02 10:28:51.190  WARN 65757 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=2h11m34s774ms).
+2022-06-02 12:22:14.148  WARN 65757 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=1h53m22s958ms).
+2022-06-02 13:21:41.968  WARN 65757 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=59m27s819ms).
+2022-06-02 14:50:50.758  WARN 65757 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=53s62ms).
+2022-06-02 16:27:59.026  WARN 65757 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=3m37s463ms).
+2022-06-02 18:31:10.542  INFO 65757 --- [RMI TCP Connection(554)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-06-02 18:31:10.559  INFO 65757 --- [RMI TCP Connection(554)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-02 18:31:10.561  INFO 65757 --- [RMI TCP Connection(554)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-06-02 18:31:10.561  INFO 65757 --- [RMI TCP Connection(554)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

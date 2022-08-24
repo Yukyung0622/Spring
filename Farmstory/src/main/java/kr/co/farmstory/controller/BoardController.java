@@ -157,7 +157,7 @@ public class BoardController {
 		}
 //		System.out.println("no : "+no);
 		//System.out.println("fid : "+fid);
-		System.out.println("nName"+nName);
+		//System.out.println("nName"+nName);
 		
 		if(fid == 0) {
 			service.deleteArticle(no);

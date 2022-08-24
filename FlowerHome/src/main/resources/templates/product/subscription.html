@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>subscription</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="/mypage/css/fullpage.custom.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.custom.css}" />
+<body>
+	<th:block th:include="/_header.html"/>
+
+  
+  <div>
+    <img th:src="@{/img/flowervase main.png}" class="img-fluid" alt="...">
+    <h3 class="text-center m-5">꽃들은 언제나 곁에 있어야 하니까요</h3>
+    <h5 class="text-center text-muted  m-5">이런 해택을 준비했어요</h5>
+    
+    <!-- <div class="container-fluid w-50">
+      <img src="../img/flower2.png" class="img-thumbnail" alt="...">
+      <p class="fs-3" style="right: 300px;">꽃 구독 최대 10% 할인</p>
+    </div> -->
+   
+    <div class="container-fluid">
+      <div class="w-50" style="float: left;">
+        <img src="../img/flower2.png" class="img-thumbnail" alt="...">
+      </div>
+      <div class="p-5">
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">꽃 구독 최대 10% 할인</p>
+        <p class="text-center text-muted fs-5">꽃을 구독하는 신청하는 분들께는 최대 10%의 할인을 제공합니다.</p>
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">.</p>
+      </div>
+      <div class="w-50" style="float: left;">
+        <img src="../img/flower1.png" class="img-thumbnail" alt="...">
+      </div>
+      <div class="p-5">
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">구독 신청시 굿즈 증정</p>
+        <p class="text-center text-muted fs-5">구독 6개월 이상 신청시 굿즈(15000원 상당)를 드립니다.</p>
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">.</p>
+      </div>
+      <div class="w-50" style="float: left;">
+        <img src="../img/flower3.png" class="img-thumbnail" alt="...">
+      </div>
+      <div class="p-5">
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">첫 구매시 화병 무료 증정</p>
+        <p class="text-center text-muted fs-5">첫 구매 고객에겐 시그니처 화병(9,900원 상당)의 드립니다.</p>
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">.</p>
+      </div>
+      <div class="w-50" style="float: left;">
+        <img src="../img/flower4.png" class="img-thumbnail" alt="...">
+      </div>
+      <div class="p-5">
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">첫 구매시 영양제 증정</p>
+        <p class="text-center text-muted fs-5">첫 구매 고객에겐 꽃의 수명을 1.5배 늘려주는꽃 영양제를 드립니다.</p>
+        <p class="text-center fs-3">.</p>
+        <p class="text-center fs-3">.</p>
+      </div>
+      
+    </div>
+    <footer>
+      <div>
+          <!-- <p><img src="/mypage/img/menu3.jpg" alt="로고" width="100px" height="100px"></p> -->
+          <p>Kukka | NO REASON FOR FLOWERS</p>
+          <!-- <button type="button" class="btn btn-outline-dark btn-sm">고객센터></button> -->
+          <p>
+            고객센터 1661-1031<br />
+            AM 10:00 - PM 18:00 점심시간 13:00-14:00 (주말&공휴일휴무)<br />
+            꾸까(KUKKA) | 대표자 박춘화| 사업자 등록번호 264-81-32594 | 사업자정보확인 | 서울특별시 서초구 명달로 9 방배빌딩 1층 KUKKA | 기업공시 | 통신판매신고번호
+          </p>
+          <p>@KUKKA, Inc. All rights reserved.</p>
+          <p>공지사항 | 배송정책 | 회원멤버십</p>
+          <p>이용약관 개인정보 처리방침</p>
+      </div>              
+  </footer>
+
+
+   
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</html>
