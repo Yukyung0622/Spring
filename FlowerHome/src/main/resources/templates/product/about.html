@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,58 +11,16 @@
     
     <style>
 
-        .container {
-          position: absolute;
-          top: 800px;
-          left: 300px;
-        }
 
-
-        .logo{
-          display: block; 
-          margin: 0 auto;
-          width: 300px;
-          height: 300px;
-          position: absolute;
-          top: 130px;
-          left: 550px;
-        }
-
-        .logo-font{
+        .logo > h1{
           text-align: center;
-          position: absolute;
-          top: 500px;
-          left: 400px;
-        }
-        .logo-font > h1{
           font-weight: bolder;
         }
-
-
-        footer {
-            width: 100%;
-            bottom: 0%;
-            margin-top: 10px;
-            border-top: 1px solid #d1cab2;
-            box-sizing: border-box;
-            position: fixed;
+        .logo > h6{
+          text-align: center;
         }
 
-        footer > div{
-            overflow: hidden;
-            position: relative;
-        }
 
-        
-        footer > div > p:nth-child(1) {
-            left: 0;
-            font-size: 15px;
-        }
-
-        /* footer > div > button{
-          position: absolute;
-          top: 20px;
-        } */
 
 
     </style>
@@ -70,7 +29,7 @@
 
 <body>
  
- 	<th:block th:include="/_header.html"/>
+ <th:block th:include="/_header.html"/>	
 
       <!-- <div class="card" style="width: 400px;">
         <img class="card-img-top" src="/mypage/img/product1.jpg" alt="Card image cap">
@@ -81,40 +40,30 @@
         </div>
       </div> -->
 
-      <div class="logo">
-        <img th:src="@{/img/logo.jpg}" class="img-fluid" alt="logo">
-      </div>
+     
 
-      <div class="logo-font">
-        <h1>NO REASON FOR FLOWERS</h1>
+
+      <div class="logo">
+        <img src="../img/logo.png" class="rounded mx-auto d-block" alt="..."><br/>
+        <h1>NO REASON FOR FLOWERS</h1><br/>
         <h6>특별한 이유가 있을 때만이 아닌 일상에서도 꽃을 즐기는 문화를 지향하는 플라워 기반 라이프 스타일 
           <br/>브랜드 꾸까(KUKKA)는 2014년 1월 런칭한 브랜드로, 꽃이 필요한 순간을 언제나 함께 합니다.</h6>
+          <br/><br/><br/>
       </div>
+      <div>
+      <img src="../img/logopage1.png" style="width: 600px; float: left; margin-left: 20px;" class="img-thumbnail" alt="...">
+      <div style="float: right; margin-right:80px; margin-top: 100px;">
+        <h1>NEW LIFESTYLE & CULTURE</h1>
+        <h6 >꾸까(KUKKA)는 필란드어로 #꽃을 의미하며
+          <br/>꽃을 일상으로 자연스럽게 즐기는 필란드의 #꽃문화를 새로운 라이프 스타일 문화로서
+          <br/>꾸까만의 방식으로 널리 전파하자는 브랜드 철학을 담고 있습니다.</h6>
+      </div><div style="clear:both;"></div>
+    </div>
 
-      <img th:src="@{/img/product4.jpg}" class="rounded float-start" alt="...">
-      <img th:src="@{/img/product4.jpg}" class="rounded float-end" alt="...">
-
-
-      <footer>
-        <div>
-            <!-- <p><img src="/mypage/img/menu3.jpg" alt="로고" width="100px" height="100px"></p> -->
-            <p>kukka | NO REASON FOR FLOWERS</p>
-            <!-- <button type="button" class="btn btn-outline-dark btn-sm">고객센터></button> -->
-            <p>
-              고객센터 1661-1031<br />
-              AM 10:00 - PM 18:00 점심시간 13:00-14:00 (주말&공휴일휴무)<br />
-              꾸까(KUKKA) | 대표자 박춘화| 사업자 등록번호 264-81-32594 | 사업자정보확인 | 서울특별시 서초구 명달로 9 방배빌딩 1층 KUKKA | 기업공시 | 통신판매신고번호
-            </p>
-            <p>@KUKKA, Inc. All rights reserved.</p>
-            <p>공지사항 | 배송정책 | 회원멤버십</p>
-            <p>이용약관 개인정보 처리방침</p>
-        </div>              
-    </footer>
-
-        
 
       
-
+	 <th:block th:include="/_footer.html"/>	
+      
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

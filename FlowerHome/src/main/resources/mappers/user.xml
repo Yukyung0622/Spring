@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.flower.dao.UserDao">
+		<insert id="insertUser">
+		insert into `Ku_members` set
+			`name`=#{name},
+			`nickname`=#{nickname},
+			`email`=#{email},
+			`pass`=#{pass},
+			`addr1`=#{addr1},
+			`addr2`=#{addr2},
+			`path`=#{path},
+			`code`=#{code},
+			`regip`=#{regip};
+	</insert>
+	<select id="selectUser" resultType="kr.co.flower.vo.UserVo">
+		SELECT * FROM `Ku_members` WHERE `email`=#{email} AND `pass`=#{pass};	
+	</select>
+</mapper>

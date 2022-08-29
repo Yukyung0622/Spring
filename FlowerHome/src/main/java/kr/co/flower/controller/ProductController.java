@@ -16,6 +16,16 @@ public class ProductController {
 		return "/product/shop";
 	}
 	
+	@GetMapping("/product/shopdetail")
+	public String shopdetail() {
+		return "/product/shopdetail";
+	}
+	
+	@GetMapping("/product/cart")
+	public String cart() {
+		return "/product/cart";
+	}
+	
 	@GetMapping("/product/express")
 	public String express() {
 		return "/product/express";
@@ -31,5 +41,7 @@ public class ProductController {
 	public String about() {
 		return "/product/about";
 	}
+	
+	
 
 }
