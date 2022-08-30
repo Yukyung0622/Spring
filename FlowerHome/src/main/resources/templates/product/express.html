@@ -12,6 +12,11 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+
+
+
+
+
 	<style>
 
 
@@ -55,10 +60,10 @@
 	  <p id="delivery">당일 배송 상품은 서울/경기 일부 지역만 배송 가능합니다.</p>
   
 	  <form class="d-flex justify-content-center" role="search" id="search">
-    
-		<input class="form-control me-2" type="search" placeholder="주소를 입력하세요" aria-label="Search">
-		<button class="btn btn-outline-success" type="submit">주소입력</button>
+		<input class="form-control me-2" type="search" placeholder="주소를 입력하세요" aria-label="Search" >
+		<button class="btn btn-outline-success" type="submit"> <a th:href="@{/product/api}">주소입력</button>
 	  </form>
+	
 
 
     <div class="container">

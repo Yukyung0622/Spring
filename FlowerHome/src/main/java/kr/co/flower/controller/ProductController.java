@@ -42,6 +42,11 @@ public class ProductController {
 		return "/product/about";
 	}
 	
+	@GetMapping("/product/api")
+	public String api() {
+		return "/product/api";
+	}
+	
 	
 
 }
