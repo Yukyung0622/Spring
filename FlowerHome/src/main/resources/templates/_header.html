@@ -38,7 +38,9 @@
         <a class="navbar-brand justify-content-end" th:if="${session.sessUser == null}" th:href="@{/user/login}">
           <img th:src="@{/img/person.svg}" width="26" height="26" alt="person">
         </a>
-          <a th:if="${session.sessUser != null}" th:href="@{/user/logout}">로그아웃</a>
+          <a class="navbar-brand justify-content-end" th:if="${session.sessUser != null}" th:href="@{/user/logout}">
+          	<img th:src="@{/img/logout.png}" width="26" height="26" alt="person">
+          </a>
           <a class="navbar-brand justify-content-end" th:href="@{/product/cart}">
           <img th:src="@{/img/basket.svg}" width="26" height="26" alt="baskets">
         </a>
