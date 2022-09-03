@@ -13290,3 +13290,9 @@ org.attoparser.ParseException: (Line = 5, Column = 46) Malformed markup: Attribu
 2022-08-30 21:21:06.478 DEBUG 48707 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
 2022-08-30 21:21:06.479 DEBUG 48707 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
 2022-08-30 21:32:54.779  WARN 48707 --- [HikariPool-3 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=9m46s727ms).
+2022-08-30 21:54:08.050  INFO 48707 --- [RMI TCP Connection(40)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-08-30 21:54:08.056 DEBUG 48707 --- [RMI TCP Connection(40)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2022-08-30 21:54:08.059 DEBUG 48707 --- [RMI TCP Connection(40)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1150980e, started on Tue Aug 30 21:06:01 KST 2022
+2022-08-30 21:54:08.153  INFO 48707 --- [RMI TCP Connection(40)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 21:54:08.175  INFO 48707 --- [RMI TCP Connection(40)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-08-30 21:54:08.180  INFO 48707 --- [RMI TCP Connection(40)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
