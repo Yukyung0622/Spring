@@ -1,4 +1,4 @@
-# Spring🙈
+# Spring <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=Spring Boot&logoColor=white"/>
 * 스프링5가 아닌 스프링 부트 2.6.x를 기준으로 실습
 
 ### Ch01. Spring 소개 및 설치
